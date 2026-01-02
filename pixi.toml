@@ -1,0 +1,19 @@
+[project]
+name = "mojo-oauth2"
+version = "0.1.0"
+description = "Pure Mojo OAuth 2.0 client library with PKCE support"
+authors = ["IDEA2CODE"]
+channels = ["conda-forge", "modular"]
+platforms = ["osx-arm64", "linux-64"]
+
+[tasks]
+build = "mojo build src -o lib/mojo_oauth2.mojopkg"
+test = "mojo run tests/test_oauth2.mojo"
+
+[dependencies]
+max = ">=24.6,<25"
+
+[workspace.dependencies]
+mojo-http = { path = "../mojo-http" }
+mojo-json = { path = "../mojo-json" }
+mojo-time = { path = "../mojo-time" }
